@@ -36,8 +36,8 @@
               <h3>Clonez PrestaShop v1.6 sur votre nouvelle machine virtuelle</h3>
               <div class="terminal">
                 <div class="shell">
-                  <p>git clone https://github.com/PrestaShop/PrestaShop.git Web/PS16</p>
-                  <p>cd Web/PS16/PrestaShop</p>
+                  <p>git clone https://github.com/PrestaShop/PrestaShop.git Web/PS16 -b 1.6</p>
+                  <p>cd Web/PS16</p>
                   <p>chmod -R 777 cache/ config/ log/ img/ mails/ modules/ themes/*/lang themes/*/cache translations/ upload/ download/ themes/*/pdf/lang/ -f</p>
                 </div>
               </div>
@@ -68,11 +68,25 @@
               </ul>
               <hr style="clear:both;">
             </li>
+            <li id="comments">
+              <h3>Commentaires et questions ?</h3>
+              <div class="comments-wrapper">
+                <div id="disqus_thread"></div>  
+              </div>
+            </li>
           </ul>
         </section>
         
       </div>
     </div>
+    <script type="text/javascript">
+      var disqus_shortname = 'kgranger';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
     <section id="next-steps">
           <h1>...maintenant, voici quelques ressources qui pourraient bien vous intéresser</h1>
           <ul class="next-steps wrapper">
