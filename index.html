@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/font.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/animate.css" media="screen" />
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -24,31 +25,15 @@
       </script> 
     <header>
       <div class="inner">
-        <h1>Prestashop + Koding</h1>
-        <h2>Installez, Hébergez et Jouez avec la version développeur de PrestaShop v1.6</h2>
+        <h1>PrestaShop + Koding.com</h1>
+        <h2>Installez, hébergez et jouez avec la version alpha PrestaShop v1.6</h2>
         <!-- <a href="https://github.com/kgranger/PrestaShop" class="button"></a> -->
       </div>
     </header>
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kgranger.fr" data-text="msg" data-via="Kevin_Granger" data-lang="fr" data-related="Kevin_Granger" data-hashtags="ps16koding">Tweeter</a>
-
-          <script>
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-          </script>
-
-          <a href="https://twitter.com/Kevin_Granger" class="twitter-follow-button" data-show-count="false">Follow @Kevin_Granger</a>
-          <script>
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-          </script>
-
-          <div class="fb-share-button" data-href="http://developers.facebook.com/docs/plugins/" data-type="button_count"></div>
-
-          <iframe src="http://ghbtns.com/github-btn.html?user=shipow&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe>
-
-          <ul class="tutorial-list">
+          <ul id="grid" class="tutorial-list grid effect-1">
             <li id="create-koding-account-step" class="image-right">
               <h3>Identifiez-vous sur <a href="http://koding.com/" target="_blank">Koding.com</a></h3>
               <p>Le plus facile est d'utiliser votre compte Github.<br/><br/>
@@ -58,17 +43,18 @@
               <h3>Accédez à l’onglet terminal de Koding</h3>
               <p>Cet onglet va vous permettre d'intéragir avec votre machine virtuelle en saisissant des lignes de commandes.</p>
             </li>
-            <li>
-              <h3>Clonez PrestaShop v1.6 sur votre nouvelle machine virtuelle</h3>
+            <li id="install-prestashop-step">
+              <h3>Clonez et installez PrestaShop v1.6 sur votre nouvelle machine virtuelle</h3>
               <div class="terminal">
-                <div class="shell">
-                  <p>git clone https://github.com/PrestaShop/PrestaShop.git Web/PS16 -b 1.6</p>
-                  <p>cd Web/PS16</p>
-                  <p>chmod -R 777 cache/ config/ log/ img/ mails/ modules/ themes/*/lang themes/*/cache translations/ upload/ download/ themes/*/pdf/lang/ -f</p>
-                </div>
+                <ul class="shell">
+                  <li class="command"><span>git clone https://github.com/PrestaShop/PrestaShop.git -b 1.6 Web/PS16</span></li>
+                  <li class="command"><span>cd Web/PS16</span></li>
+                  <li class="command"><span>chmod -R 777 cache/ config/ download/ img/ log/ mails/ modules/ themes/*/lang themes/*/cache themes/*/pdf/lang/ translations/ upload/ -f</span></li>
+                  <li class="command"><span>php install-dev/index_cli.php --domain=<em>username</em>.kd.io</span></li>
+                </ul>
               </div>
             </li>
-            <li>
+            <!-- <li>
               <h3>Installation de <a href="http://www.prestashop.com/">PrestaShop</a></h3>
               <p>Accèdez à l’url d’installation de votre boutique :<br><br>http://<em>username</em>.kd.io/PS16/install-dev/</p>
               <img class="img-thumbnail" src="images/tutorial/Prestashop_install.png" alt="">
@@ -76,10 +62,14 @@
               <p>...et suivez le processus d’installation de votre nouvelle boutique.<br>PrestaShop est capable de créer sa table de données tout seul.</p>
               <br>
               <img class="img-thumbnail" src="images/tutorial/Prestashop_install.gif" alt="">
-            </li>
+            </li> -->
             <li id="final-step">
               <h3>Félicitations !</h3>
               <p>Votre boutique de développement est prête.</p>
+              <ul class="user-password">
+                <li class="user">Utilisateur : <span>test@prestashop.com</span></li>
+                <li class="password">Mot de passe : <span>0123456789</span></li>
+              </ul>
               <ul class="back-front">
                 <li>
                   <h4>Front Office</h4>
@@ -88,11 +78,53 @@
                 </li>
                 <li>
                   <h4>Back Office</h4>
-                  <p>http://<em>username</em>.kd.io/PS16/admin-dev</p>
+                  <p>http://<em>username</em>.kd.io/PS16/admin-dev/</p>
                   <img class="img-thumbnail" src="images/tutorial/Prestashop_back.png" alt="">
                 </li>
               </ul>
               <hr style="clear:both;">
+            </li>
+            <li id="social">
+              <ul>
+            <li>
+              <!-- twitter : retweet -->
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kgranger.fr" data-text="msg" data-via="Kevin_Granger" data-lang="fr" data-related="Kevin_Granger" data-hashtags="ps16koding">Tweeter</a>
+              <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+              </script>
+            </li>
+            <li>
+              <!-- facebook : share -->
+              <div class="fb-share-button" data-href="http://shipow.github.io/prestashop-koding" data-type="button_count"></div>       
+            </li>
+            <li>
+              <!-- google+ : share -->
+              <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              <script type="text/javascript">
+                (function() {
+                  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                  po.src = 'https://apis.google.com/js/platform.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                })();
+              </script>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <!-- twitter : follow author -->
+              <a href="https://twitter.com/Kevin_Granger" class="twitter-follow-button" data-show-count="false">Follow @Kevin_Granger</a>
+              <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+              </script>
+            </li>
+            <li>
+              <!-- github : follow -->
+              <iframe src="http://ghbtns.com/github-btn.html?user=shipow&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="132" height="20"></iframe>
+            </li>
+            <li>
+              <iframe src="http://ghbtns.com/github-btn.html?user=prestashop&repo=prestashop&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+            </li>
+          </ul>
             </li>
             <li id="comments">
               <h3>Commentaires et questions ?</h3>
@@ -105,6 +137,15 @@
         
       </div>
     </div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="javascripts/vendor/waypoints.js"></script>
+    <script>
+      $('#grid > li').waypoint(
+          function() {
+          $(this).css('visibility', 'visible').addClass('animated fadeInUp');
+      },{offset: '77%'});
+    </script>
     <script type="text/javascript">
       var disqus_shortname = 'kgranger';
       (function() {
@@ -114,26 +155,26 @@
       })();
     </script>
     <section id="next-steps">
-          <h1>...maintenant, voici quelques ressources qui pourraient bien vous intéresser</h1>
+          <h1>...maintenant, voici quelques ressources PrestaShop qui pourraient bien vous intéresser</h1>
           <ul class="next-steps wrapper">
             <li>
               <a class="hero-octicon" href="javascript:void(0);">
                 <span class="icon-bulb icon-hero"></span>
               </a>
-              <h2><a href="javascript:void(0);">Améliorer PrestaShop</a></h2>
+              <h2><a href="javascript:void(0);">Contribuer</a></h2>
               <ul>
-                <li>Club Utilisateur</li>  
-                <li>Bug tracker</li>
+                <li><a href="">Club Utilisateur</a></li>  
+                <li><a href="">Bug tracker</a></li>
               </ul>
             </li>
             <li>
               <a class="hero-octicon" href="javascript:void(0);">
                 <span class="icon-study icon-hero"></span>
               </a>
-              <h2><a href="javascript:void(0);">Apprendre PrestaShop</a></h2>
+              <h2><a href="javascript:void(0);">Apprendre</a></h2>
               <ul>
-                <li>Doc en ligne</li>
-                <li>Développer un module dashboard 1.6</li>
+                <li><a href="">Doc en ligne</a></li>
+                <li><a href="">Développer un module dashboard 1.6</a></li>
               </ul>
             </li>
             <li>
@@ -142,8 +183,8 @@
               </a>
               <h2><a href="javascript:void(0);">Rejoindre la communauté</a></h2>
               <ul>
-                <li>Forum PrestaShop</li>
-                <li>Twitter PrestaShop</li>
+                <li><a href="">Forum PrestaShop</a></li>
+                <li><a href="">Twitter PrestaShop</a></li>
               </ul>
             </li>
           </ul>
