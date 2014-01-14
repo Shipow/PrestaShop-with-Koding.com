@@ -1,0 +1,201 @@
+@import "compass"
+@import "foundation"
+@import "mixins"
+
+// LAYOUT STYLES
+
+body
+  color: #666
+  background-color: #eee
+
+header
+  margin: 0 auto
+  padding: 80px 0 80px
+  color: #fff
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3)
+  background-color: #1A2224
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.04) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0, transparent 100px)
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.04) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0, transparent 100px)
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.04) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0, transparent 100px)
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
+  h1
+    letter-spacing: -1px
+    font-size: 72px
+    color: #fff
+    line-height: 1
+    margin: 0 0 0.2em 0
+  h2
+    font-size: 26px
+    letter-spacing: 0.1em
+    color: #00A749
+    font-weight: 200
+    line-height: 1.3
+
+.tutorial-list
+  margin: 90px 0 0 0
+  counter-reset: tutorialstep
+  > li
+    visibility: hidden
+    list-style: none
+    position: relative
+    background-color: #fff
+    margin: 0 0 70px 0px
+    padding: 40px 20px 20px
+    font-size: 18px
+    border: 1px solid #ddd
+    border-radius: 5px
+    text-align: center
+    z-index: 1
+    -webkit-transition: all 0.6s ease-in-out 0s
+    -moz-transition: all 0.6s ease-in-out 0s
+    -o-transition: all 0.6s ease-in-out 0s
+    transition: all 0.6s ease-in-out 0s
+    &:not(.question):after
+      counter-increment: tutorialstep
+      content: counter(tutorialstep)
+    &:after
+      @include absolute(left -15px top -15px)
+      width: 58px
+      height: 58px
+      line-height: 58px
+      background-color: #00A749
+      border-radius: 200px
+      font-size: 30px
+      font-weight: 300
+      color: #fff
+      text-align: center
+      -webkit-backface-visibility: hidden
+      z-index: 100
+  h3
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+    font-weight: 200
+    font-size: 1.4em
+    margin: 0 0 0.8em 0
+  .image-right
+    padding-right: 460px
+    p
+      margin-left: 30px
+      margin-right: 30px
+
+.icon-hero
+  font-size: 4em
+  color: #2879d0
+
+.img-thumbnail
+  border-radius: 6px
+  border: solid 1px #DDD
+  padding: 6px
+  width: 70%
+
+.command
+  text-align: left
+  font-family: Consolas, "Liberation Mono", Courier, monospace
+  font-size: 0.8em
+  line-height: 1.3em
+  color: #00A749
+  background-color: #1A2224
+  overflow: hidden
+  padding: 20px
+  margin: 0
+  border-radius: 7px
+  text-align: left
+  display: block
+  width: 90%
+  margin: 20px auto 10px
+
+.hero-octicon
+  width: 100px
+  height: 100px
+  border-radius: 50px
+  text-align: center
+  border: solid 1px #e5e5e5
+  margin: 0 auto 15px
+  display: block
+  line-height: 2em!important
+  -webkit-transition: all 0.2s ease-in-out 0s
+  -moz-transition: all 0.2s ease-in-out 0s
+  -o-transition: all 0.2s ease-in-out 0s
+  transition: all 0.2s ease-in-out 0s
+  &:hover
+    -webkit-transform: scale(1.1)
+    -moz-transform: scale(1.1)
+    -o-transform: scale(1.1)
+    -ms-transform: scale(1.1)
+    transform: scale(1.1)
+
+.button
+  border-radius: 5px
+  background-color: white
+  color: #00A749
+  border: 2px solid #00A749
+  &:hover
+    color: white
+    background-color: #00A749
+
+//STEPS
+#create-koding-account-step
+  background: white url(../images/tutorial/Koding_homepage.png) right 0 no-repeat
+  background-size: 440px
+
+#cloning-prestashop-repo-step
+  background: white url(../images/tutorial/Koding_terminal.png) right 0 no-repeat
+  background-size: 440px
+
+#final-step
+  .user-password
+    margin: 0 auto
+    width: 50%
+    text-align: left
+  .back-front
+    margin: 0
+    padding: 0
+    li
+      width: 50%
+      float: left
+      list-style: none
+      margin: 40px 0 0 0
+      padding: 0
+      img
+        width: 90%
+
+#next-steps
+  display: block
+  width: 100%
+  background-color: white
+  h1
+    display: block
+    font-size: 1.6em
+    text-align: center
+    margin: 20px 0 40px
+  h2
+    font-size: 1.4em
+
+// Smaller than standard 960 (devices and browsers)
+@media only screen and (max-width: 959px)
+// Tablet Portrait size to standard 960 (devices and browsers)
+@media only screen and (min-width: 768px) and (max-width: 959px)
+  header
+    h1, h2
+      width: 340px
+    h1
+      font-size: 60px
+    h2
+      font-size: 30px
+// All Mobile Sizes (devices and browser)
+@media only screen and (max-width: 767px)
+  header
+    padding: 20px 0
+    h1, h2
+      width: 100%
+    h1
+      font-size: 48px
+    h2
+      font-size: 24px
+  #main-content
+    float: none
+    width: 100% !important
+// Mobile Landscape Size to Tablet Portrait (devices and browsers)
+@media only screen and (min-width: 480px) and (max-width: 767px)
+// Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
+@media only screen and (max-width: 479px)

@@ -1,4 +1,4 @@
-function TodoCtrl($scope) {
+function Main($scope) {
   $scope.username = "username";
   $scope.checkUrl = function() {
     var url = $scope.username+".kd.io/";
