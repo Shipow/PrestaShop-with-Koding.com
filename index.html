@@ -20,6 +20,12 @@
             <h1>PrestaShop + Koding.com</h1>
             <h2>Installez, hébergez et jouez avec la version alpha PrestaShop v1.6</h2>
           </div>
+          <div class="large-6 columns">
+            <ul data-orbit>
+              <li><img src="//placehold.it/600x400"></li>
+              <li><img src="//placehold.it/600x400"></li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
@@ -113,10 +119,13 @@
           <li id="social-step">
             <h3>Pour partager...</h3>
             <ul>
-              <li>Networks</li>
+              <li><a href="#">Networks</a></li>
+              <li><a href="#">Networks</a></li>
+              <li><a href="#">Networks</a></li>
+              <li><a href="#">Networks</a></li>
             </ul>
-            <h3>Restez Informez</h3>
-            <p>Rejoignez la liste pour recevoir une notifications lors de la parution des prochains articles</p>
+            <h3>Restez Informé</h3>
+            <p>Inscrivez-vous pour recevoir une notification lors des parutions des prochains articles.</p>
             <div class="row">
               <div class="large-5 column"><label for="newsletter" class="rigth inline">newsletter</label></div>
               <div class="large-5 column"><input type="text" name="newsletter" id="newsletter"></div>
@@ -126,24 +135,6 @@
         </ul>
       </section>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-    <script src="javascripts/vendor/waypoints.js"></script>
-    <script src="javascripts/vendor/angular.min.js"></script>
-     <script src="javascripts/main.js"></script>
-    <script>
-      $('#grid > li').waypoint(
-          function() {
-          $(this).css('visibility', 'visible').addClass('animated fadeInUp');
-      },{offset: '77%'});
-    </script>
-    <script type="text/javascript">
-      var disqus_shortname = 'kgranger';
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
     <section id="next-steps">
       <h1>
          ...maintenant, voici quelques ressources PrestaShop qui pourraient bien vous intéresser
@@ -180,6 +171,28 @@
           </ul>
         </span>
       </div>
-    </section> 
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="javascripts/vendor/waypoints.js"></script>
+    <script src="javascripts/vendor/angular.min.js"></script>
+    <script src="javascripts/vendor/foundation/foundation.js"></script>
+    <script src="javascripts/vendor/foundation/foundation.orbit.js"></script>
+    <script src="javascripts/main.js"></script>
+    <script>
+      $(document).foundation();
+
+      $('#grid > li').waypoint(
+          function() {
+          $(this).css('visibility', 'visible').addClass('animated fadeInUp');
+      },{offset: '77%'});
+    </script>
+    <script type="text/javascript">
+      var disqus_shortname = 'kgranger';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
   </body>
 </html>
