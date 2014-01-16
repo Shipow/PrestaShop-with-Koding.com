@@ -5146,13 +5146,20 @@ header {
     font-size: 72px;
     color: white;
     line-height: 1;
-    margin: 0 0 0.2em 0; }
+    margin: 0 0 0.5em 0; }
   header h2 {
     font-size: 26px;
     letter-spacing: 0.1em;
-    color: #00a749;
+    color: #7ecb41;
     font-weight: 200;
     line-height: 1.3; }
+
+#header-slider {
+  padding: 2px;
+  background-color: black; }
+
+.orbit-prev, .orbit-next {
+  background-color: rgba(0, 0, 0, 0.6); }
 
 .tutorial-list {
   margin: 90px 0 0 0;
@@ -5183,7 +5190,7 @@ header {
       width: 58px;
       height: 58px;
       line-height: 58px;
-      background-color: #00a749;
+      background-color: #7ecb41;
       border-radius: 200px;
       font-size: 30px;
       font-weight: 300;
@@ -5217,7 +5224,7 @@ header {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-size: 0.8em;
   line-height: 1.3em;
-  color: #00a749;
+  color: #7ecb41;
   background-color: #1a2224;
   overflow: hidden;
   padding: 20px;
@@ -5251,11 +5258,11 @@ header {
 .button {
   border-radius: 5px;
   background-color: white;
-  color: #00a749;
-  border: 2px solid #00a749; }
+  color: #7ecb41;
+  border: 2px solid #7ecb41; }
   .button:hover {
     color: white;
-    background-color: #00a749; }
+    background-color: #7ecb41; }
 
 #create-koding-account-step {
   background: white url(../images/tutorial/Koding_homepage.png) right 0 no-repeat;

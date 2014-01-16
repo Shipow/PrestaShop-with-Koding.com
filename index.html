@@ -21,10 +21,16 @@
             <h2>Installez, hébergez et jouez avec la version alpha PrestaShop v1.6</h2>
           </div>
           <div class="large-6 columns">
-            <ul data-orbit>
-              <li><img src="//placehold.it/600x400"></li>
-              <li><img src="//placehold.it/600x400"></li>
-            </ul>
+            <div id="header-slider">
+              <ul data-orbit>
+                <li>
+                  <img src="images/tutorial/Prestashop_back.png" alt="PrestaShop 1.6">
+                </li>
+                <li>
+                  <img src="images/tutorial/Koding_editor.png" alt="Koding.com">
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -105,7 +111,7 @@
                 <h4>Back Office</h4>
                 <a href="http://{{username}}.kd.io/PS16/admin-dev/">
                   http://<em>{{username}}</em>.kd.io/PS16/admin-dev/<br><br>
-                  <img class="img-thumbnail" src="images/tutorial/Prestashop_back.png" alt="Prestashop 1.6 Back Office">
+                  <img class="img-thumbnail" src="images/tutorial/Prestashop_login.png" alt="Prestashop 1.6 Back Office">
                 </a>
               </li>
             </ul>
@@ -178,21 +184,5 @@
     <script src="javascripts/vendor/foundation/foundation.js"></script>
     <script src="javascripts/vendor/foundation/foundation.orbit.js"></script>
     <script src="javascripts/main.js"></script>
-    <script>
-      $(document).foundation();
-
-      $('#grid > li').waypoint(
-          function() {
-          $(this).css('visibility', 'visible').addClass('animated fadeInUp');
-      },{offset: '77%'});
-    </script>
-    <script type="text/javascript">
-      var disqus_shortname = 'kgranger';
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
   </body>
 </html>
