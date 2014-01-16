@@ -62,7 +62,7 @@
           <li id="cloning-prestashop-repo-step" class="image-right">
             <h3>Accédez à l’onglet terminal de Koding</h3>
             <p>L'onglet terminal va vous permettre d'intéragir avec votre machine virtuelle en saisissant des lignes de commandes.</p>
-            <a class="button" href="https://koding.com/Terminal">Accédez au terminal</a>
+            <a class="button" href="https://koding.com/Terminal" target="_blank">Accédez au terminal</a>
           </li>
           <li id="install-prestashop-step">
             <h3>Clonez et installez PrestaShop v1.6 sur votre nouvelle machine virtuelle</h3>
@@ -70,7 +70,7 @@
                 <li class="command"><span>git clone https://github.com/PrestaShop/PrestaShop.git -b 1.6 Web/PS16</span></li>
                 <li class="command"><span>cd Web/PS16</span></li>
                 <li class="command"><span>chmod -R 777 cache/ config/ download/ img/ log/ mails/ modules/ themes/*/lang themes/*/cache themes/*/pdf/lang/ translations/ upload/ -f</span></li>
-                <li class="command"><span>php install-dev/index_cli.php --domain=<em>{{username}}</em>.kd.io</span></li>
+                <li class="command"><span>php install-dev/index_cli.php --domain=<em>{{username}}</em>.kd.io --database_create=1</span></li>
             </ul>
           </li>
           <!-- <li>
