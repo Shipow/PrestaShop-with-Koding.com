@@ -15,13 +15,13 @@
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
-          <h1><a href="#"><i class="fa fa-coffee"></i> LEARN PrestaShop</a></h1>
+          <h1><a href="#"><i class="fa fa-coffee"></i> LEARN PrestaShop [Beta]</a></h1>
         </li>
       </ul>
       <section class="top-bar-section">
         <ul class="right">
           <li class="active"><a href="#">FR</a></li>
-          <li><a href="#">EN</a></li>
+          <!-- <li><a href="#">EN</a></li> -->
         </ul>
       </section>
     </nav>
@@ -71,7 +71,7 @@
             <p>Koding fournit <strong>gratuitement</strong> un service puissant pour développer sur un serveur virtuel à partir de votre navigateur.
             </p>
             <a href="http://koding.com/Register" target="_blank" class="button">
-              Ok, c'est parti !
+              OK, c'est parti !
               <i class="fa fa-arrow-right"></i>
             </a>
           </li>
@@ -113,7 +113,9 @@
           <li id="install-prestashop-step">
             <a name="prestashop-install"></a>
             <h3 data-magellan-destination="prestashop-install">Clonez et installez PrestaShop v1.6 sur votre nouvelle machine virtuelle</h3>
-            <ul>
+            <p>Il vous suffit de copier/coller et executer chacune de ces lignes dans le terminal.<br>
+              Note : Sur Windows, le raccourci clavier CTRL+V ne fonctionne pas à partir du terminal : utilisez le menu du clic droit.</p>
+            <ul class="commands-list">
               <li id="cmd1" class="command">
                 git clone https://github.com/PrestaShop/PrestaShop.git -b 1.6 Web/PS16
                 <a href="javascript:void(0);" clip-copy="copyCommand('#cmd1')">
@@ -160,42 +162,36 @@
             <hr>
             <div class="back-front row">
               <div class="large-6 column">
-                <h4>Front Office<br>
-                  <small>
-                    <i class="fa fa-link"></i>
-                    <a href="http://{{username}}.kd.io/PS16/">
-                      http://<em>{{username}}</em>.kd.io/PS16/<br><br>
-                      <img class="img-thumbnail" src="images/tutorial/Prestashop_front.png" alt="PrestaShop 1.6 Front Office">
-                    </a>
-                  </small>
-                </h4>
+                <h4>Front Office PrestaShop</h4>  
+                <a class="button" href="http://{{username}}.kd.io/PS16/">
+                  <i class="fa fa-link"></i>
+                  http://<em>{{username}}</em>.kd.io/PS16/
+                </a>
+                <a href="http://{{username}}.kd.io/PS16/">
+                  <img class="img-thumbnail" src="images/tutorial/Prestashop_front.png" alt="PrestaShop 1.6 Front Office">
+                </a>
               </div>
               <div class="large-6 column">
-                <h4>Back Office<br>
-                  <small>
-                    <i class="fa fa-link"></i>
-                    <a href="http://{{username}}.kd.io/PS16/admin-dev/">
-                      http://<em>{{username}}</em>.kd.io/PS16/admin-dev/
-                    </a>
-                  </small>
-                </h4>
+                <h4>Back Office PrestaShop</h4>
+                <a class="button" href="http://{{username}}.kd.io/PS16/admin-dev/">
+                  <i class="fa fa-link"></i>
+                  http://<em>{{username}}</em>.kd.io/PS16/admin-dev/
+                </a>
                 <table class="user-password">
-                  <thead>
-                    <tr>
-                      <th>
-                        <i class="fa fa-envelope"></i>
-                        Utilisateur
-                      </th>
-                      <th>
-                        <i class="fa fa-key"></i>
-                        Mot de passe
-                      </th>
-                    </tr>
-                  </thead>
                   <tbody>
                     <tr>
-                      <td>test@prestashop.com</td>
-                      <td>0123456789</td>
+                      <td>
+                        <i class="fa fa-envelope"></i>
+                        Utilisateur
+                      </td>
+                      <td>
+                        <i class="fa fa-key"></i>
+                        Mot de passe
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>test@prestashop.com</strong></td>
+                      <td><strong>0123456789</strong></td>
                     </tr>
                   </tbody>
                 </table>
@@ -213,18 +209,27 @@
           </li>
           <li id="social-step" class="social-step">
             <h3>Pour partager...</h3>
-            <a class="button" href="#">
+            <a class="button" target="_blank" href="https://twitter.com/intent/tweet?text=YOUR-TITLE&url=YOUR-URL&via=TWITTER-HANDLE">
+              <i class="fa fa-twitter"></i>
+              Tweet
+            </a>
+            <a class="button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=YOUR-URL">
               <i class="fa fa-facebook"></i>
               Facebook
             </a>
-            <a class="button" href="#">
-              <i class="fa fa-twitter"></i>
-              Twitter
+            <a class="button" target="_blank" href="https://plus.google.com/share?url=YOUR-URL">
+              <i class="fa fa-google-plus"></i>
+              Google+
             </a>
-            <a class="button" href="#">
+            <a class="button" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=YOUR-URL&title=YOUR-TITLE&summary=YOUR-SUMMARY&source=YOUR-URL">
               <i class="fa fa-linkedin"></i>
-              Linkedin
+              LinkedIn
             </a>
+            <a class="button" target="_blank" href="https://pinterest.com/pin/create/button/?url=YOUR-URL&description=YOUR-DESCRIPTION&media=YOUR-IMAGE-SRC">
+              <i class="fa fa-pinterest"></i>
+              Pinterest
+            </a>
+
             <!-- <h3>...et rester informé</h3>
               <div class="row">
                 <div class="large-6 column">
@@ -244,50 +249,50 @@
     </section>
     <section id="next-steps">
       <h1>
-       Quelques ressources PrestaShop qui pourraient bien vous intéresser
-     </h1>
-     <div class="next-steps row">
-      <div class="small-4 large-4 columns">
-        <a class="hero-octicon" href="javascript:void(0);">
-          <i class="fa fa-lightbulb-o fa-3x"></i>
-        </a>
-        <h2>Contribuer</h2>
-        <ul>
-          <li><a href="#">Club Utilisateur</a></li>  
-          <li><a href="#">Bug tracker</a></li>
-        </ul>
+        ...et quelques ressources PrestaShop qui pourraient bien vous intéresser
+      </h1>
+      <div class="next-steps row">
+        <div class="small-4 large-4 columns">
+          <a class="hero-octicon" href="javascript:void(0);">
+            <i class="fa fa-lightbulb-o fa-3x"></i>
+          </a>
+          <h2>Contribuer</h2>
+          <ul>
+            <li><a href="#">Club Utilisateur</a></li>  
+            <li><a href="#">Bug tracker</a></li>
+          </ul>
+        </div>
+        <div class="small-4 large-4 columns">
+          <a class="hero-octicon" href="javascript:void(0);">
+            <i class="fa fa-book fa-3x"></i>
+          </a>
+          <h2>Apprendre</h2>
+          <ul>
+            <li><a href="#">Doc en ligne</a></li>
+            <li><a href="#">Développer un widget Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="small-4 large-4 columns">
+          <a class="hero-octicon" href="javascript:void(0);">
+            <i class="fa fa-comments-o fa-3x"></i>
+          </a>
+          <h2>Rejoindre la communauté</h2>
+          <ul>
+            <li><a href="#">Forum PrestaShop</a></li>
+            <li><a href="#">Twitter PrestaShop</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="small-4 large-4 columns">
-        <a class="hero-octicon" href="javascript:void(0);">
-          <i class="fa fa-book fa-3x"></i>
-        </a>
-        <h2>Apprendre</h2>
-        <ul>
-          <li><a href="#">Doc en ligne</a></li>
-          <li><a href="#">Développer un widget Dashboard</a></li>
-        </ul>
-      </div>
-      <div class="small-4 large-4 columns">
-        <a class="hero-octicon" href="javascript:void(0);">
-          <i class="fa fa-comments-o fa-3x"></i>
-        </a>
-        <h2>Rejoindre la communauté</h2>
-        <ul>
-          <li><a href="#">Forum PrestaShop</a></li>
-          <li><a href="#">Twitter PrestaShop</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-  <script src="javascripts/vendor/waypoints.js"></script>
-  <script src="javascripts/vendor/angular/angular.min.js"></script>
-  <script src="javascripts/vendor/zeroclipboard/ZeroClipboard.min.js"></script>
-  <script src="javascripts/vendor/ngClip.js"></script>
-  <script src="javascripts/vendor/foundation/foundation.js"></script>
-  <script src="javascripts/vendor/foundation/foundation.orbit.js"></script>
-  <script src="javascripts/vendor/foundation/foundation.magellan.js"></script>
-  <script src="javascripts/vendor/foundation/foundation.reveal.js"></script>
-  <script src="javascripts/main.js"></script>
-</body>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="javascripts/vendor/waypoints.js"></script>
+    <script src="javascripts/vendor/angular/angular.min.js"></script>
+    <script src="javascripts/vendor/zeroclipboard/ZeroClipboard.min.js"></script>
+    <script src="javascripts/vendor/ngClip.js"></script>
+    <script src="javascripts/vendor/foundation/foundation.js"></script>
+    <script src="javascripts/vendor/foundation/foundation.orbit.js"></script>
+    <script src="javascripts/vendor/foundation/foundation.magellan.js"></script>
+    <script src="javascripts/vendor/foundation/foundation.reveal.js"></script>
+    <script src="javascripts/main.js"></script>
+  </body>
 </html>

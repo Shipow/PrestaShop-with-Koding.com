@@ -62,10 +62,6 @@ header
     border-radius: 5px
     text-align: center
     z-index: 1
-    -webkit-transition: all 0.6s ease-in-out 0s
-    -moz-transition: all 0.6s ease-in-out 0s
-    -o-transition: all 0.6s ease-in-out 0s
-    transition: all 0.6s ease-in-out 0s
     &:not(.code-step):after
       counter-increment: tutorialstep
       content: counter(tutorialstep)
@@ -82,6 +78,11 @@ header
       text-align: center
       -webkit-backface-visibility: hidden
       z-index: 100
+      @media (max-width: 767px)
+        width: 42px
+        height: 42px
+        line-height: 42px
+        font-size: 24px
     &.final-step:after
       background-color: $secondary-color
       content: $fa-var-trophy
@@ -104,10 +105,16 @@ header
     margin: 0 0 0.8em 0
   .image-right
     padding-right: 460px
+    @media (max-width: 767px)
+      padding-right: 10px
+      background-image: none!important
     p
       margin-left: 30px
       margin-right: 30px
 
+.commands-list
+  margin: 0
+  padding: 0
 .command
   position: relative
   text-align: left
@@ -117,14 +124,16 @@ header
   color: $primary-color
   background-color: #1A2224
   overflow: hidden
-  padding: 20px
-  margin: 0
-  border-radius: 7px
+  @include border-radius(7px)
   text-align: left
   display: block
   width: 90%
-  padding: 15px 50px 15px 20px
+  padding: 15px 105px 15px 20px
   margin: 20px auto 10px
+  @media (max-width: 767px)
+    width: 100%
+    margin: 0 0 10px 0
+    padding: 8px 105px 8px 8px
   a
     @extend .button
     @extend .round
@@ -156,7 +165,7 @@ header
   background-size: 440px
 
 .grid
-  background-color: #1A2224
+  background-color: #1F2426
   @include background-image(linear-gradient(rgba(white,.05) 2px, transparent 2px),linear-gradient(90deg, rgba(white,.04) 2px, transparent 2px), linear-gradient(rgba(white,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(white,.03) 1px, transparent 1px),linear-gradient(0deg, rgba(black,.3) 0, transparent 100px))
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
@@ -164,14 +173,14 @@ header
 #final-step
   .user-password
     width: 100%
-    margin-top: 15px
+    margin-top: 10px
     text-align: left
 
 #next-steps
   display: block
   width: 100%
   background-color: white
-  padding: 20px
+  padding: 20px 0 40px 0
   .hero-octicon
     width: 100px
     height: 100px
@@ -179,8 +188,7 @@ header
     text-align: center
     margin: 0 auto 15px
     display: block
-    background-color: #1A2224
-    @include background-image(linear-gradient(rgba(white,.05) 2px, transparent 2px),linear-gradient(90deg, rgba(white,.04) 2px, transparent 2px), linear-gradient(rgba(white,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(white,.03) 1px, transparent 1px),linear-gradient(0deg, rgba(black,.3) 0, transparent 100px))
+    @extend .grid
     background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
     background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
     &:hover
@@ -190,7 +198,7 @@ header
     display: block
     font-size: 1.6em
     text-align: center
-    margin: 20px 0 40px
+    margin-bottom: 40px
     color: $secondary-color
   h2
     font-size: 1.2em
@@ -205,13 +213,8 @@ header
       list-style: none
       list-style-position: inside
 
-// Smaller than standard 960 (devices and browsers)
-@media only screen and (max-width: 959px)
-// Tablet Portrait size to standard 960 (devices and browsers)
 @media only screen and (min-width: 768px) and (max-width: 959px)
   header
-    h1, h2
-      width: 340px
     h1
       font-size: 60px
     h2
@@ -229,7 +232,4 @@ header
   #main-content
     float: none
     width: 100% !important
-// Mobile Landscape Size to Tablet Portrait (devices and browsers)
-@media only screen and (min-width: 480px) and (max-width: 767px)
-// Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
-@media only screen and (max-width: 479px)
+    padding: 0 30px
