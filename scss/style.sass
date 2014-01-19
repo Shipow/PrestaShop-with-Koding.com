@@ -56,7 +56,7 @@ header
     position: relative
     background-color: #fff
     margin: 0 0 70px 0px
-    padding: 40px 20px 20px
+    padding: 20px 20px 10px
     font-size: 18px
     border: 1px solid #ddd
     border-radius: 5px
@@ -82,19 +82,18 @@ header
       text-align: center
       -webkit-backface-visibility: hidden
       z-index: 100
-    &.code-step:after
-      content: $fa-var-code
-      @extend .fa
-      line-height: 2em
     &.final-step:after
-      content: $fa-var-thumbs-o-up
+      background-color: $secondary-color
+      content: $fa-var-trophy
       @extend .fa
       line-height: 2em
     &.comment-step:after
+      background-color: $secondary-color
       content: $fa-var-comments
       @extend .fa
       line-height: 2em
     &.social-step:after
+      background-color: $secondary-color
       content: $fa-var-users
       @extend .fa
       line-height: 2em
@@ -132,30 +131,10 @@ header
     @extend .tiny
     @include absolute(top 5px right 5px)
 
-.icon-hero
-  font-size: 4em
-  color: #2879d0
-
 .img-thumbnail
   border-radius: 6px
   border: solid 1px #DDD
   padding: 6px
-  width: 70%
-
-.hero-octicon
-  width: 100px
-  height: 100px
-  border-radius: 50px
-  text-align: center
-  margin: 0 auto 15px
-  display: block
-  line-height: 2em!important
-  background-color: #1A2224
-  @include background-image(linear-gradient(rgba(white,.05) 2px, transparent 2px),linear-gradient(90deg, rgba(white,.04) 2px, transparent 2px), linear-gradient(rgba(white,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(white,.03) 1px, transparent 1px),linear-gradient(0deg, rgba(black,.3) 0, transparent 100px))
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
-  &:hover
-
 
 .button
   border-radius: 5px
@@ -176,40 +155,55 @@ header
   background: white url(../images/tutorial/Koding_terminal.png) right 0 no-repeat
   background-size: 440px
 
-#final-step
-  .user-password
-    margin: 0 auto
-    width: 50%
-    text-align: left
-  .back-front
-    margin: 0
-    padding: 0
-    li
-      width: 50%
-      float: left
-      list-style: none
-      margin: 40px 0 0 0
-      padding: 0
-      img
-        width: 90%
-
 .grid
   background-color: #1A2224
   @include background-image(linear-gradient(rgba(white,.05) 2px, transparent 2px),linear-gradient(90deg, rgba(white,.04) 2px, transparent 2px), linear-gradient(rgba(white,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(white,.03) 1px, transparent 1px),linear-gradient(0deg, rgba(black,.3) 0, transparent 100px))
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
 
+#final-step
+  .user-password
+    width: 100%
+    margin-top: 15px
+    text-align: left
+
 #next-steps
   display: block
   width: 100%
   background-color: white
+  padding: 20px
+  .hero-octicon
+    width: 100px
+    height: 100px
+    border-radius: 50px
+    text-align: center
+    margin: 0 auto 15px
+    display: block
+    background-color: #1A2224
+    @include background-image(linear-gradient(rgba(white,.05) 2px, transparent 2px),linear-gradient(90deg, rgba(white,.04) 2px, transparent 2px), linear-gradient(rgba(white,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(white,.03) 1px, transparent 1px),linear-gradient(0deg, rgba(black,.3) 0, transparent 100px))
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
+    &:hover
+    i
+      line-height: 2em
   h1
     display: block
     font-size: 1.6em
     text-align: center
     margin: 20px 0 40px
+    color: $secondary-color
   h2
-    font-size: 1.4em
+    font-size: 1.2em
+    text-transform: uppercase
+    text-align: center
+    color: gray
+    margin: 0 0 20px 0
+  ul
+    text-align: center
+    margin: 0
+    li
+      list-style: none
+      list-style-position: inside
 
 // Smaller than standard 960 (devices and browsers)
 @media only screen and (max-width: 959px)

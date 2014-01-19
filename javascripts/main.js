@@ -10,6 +10,7 @@ pskoding.controller('Main', function($scope,$http) {
     $(element).addClass('animated bounce');
     return cmd;
   };
+  $scope.username = 'username';
   $scope.checkUrl = function() {
     delete $scope.status;
     var url = "http://"+$scope.username+".kd.io/";
