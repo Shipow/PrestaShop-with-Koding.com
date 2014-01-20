@@ -116,29 +116,29 @@
             <p>Il vous suffit de copier/coller et executer chacune de ces lignes dans le terminal.<br>
               Note : Sur Windows, le raccourci clavier CTRL+V ne fonctionne pas à partir du terminal : utilisez le menu du clic droit.</p>
             <ul class="commands-list">
-              <li id="cmd1" class="command">
-                git clone https://github.com/PrestaShop/PrestaShop.git -b 1.6 Web/PS16
+              <li class="command">
+                <span id="cmd1">git clone https://github.com/PrestaShop/PrestaShop.git -b 1.6 Web/PS16</span>
                 <a href="javascript:void(0);" clip-copy="copyCommand('#cmd1')">
                   <i class="fa fa-copy"></i>
                   Copier
                 </a>
               </li>
-              <li id="cmd2" class="command">
-                cd Web/PS16
+              <li class="command">
+                <span id="cmd2">cd Web/PS16</span>
                 <a href="javascript:void(0);" clip-copy="copyCommand('#cmd2')">
                   <i class="fa fa-copy"></i>
                   Copier
                 </a>
               </li>
-              <li id="cmd3" class="command">
-                chmod -R 777 cache/ config/ download/ img/ log/ mails/ modules/ themes/*/lang themes/*/cache themes/*/pdf/lang/ translations/ upload/ -f
+              <li class="command">
+                <span id="cmd3">chmod -R 777 cache/ config/ download/ img/ log/ mails/ modules/ themes/*/lang themes/*/cache themes/*/pdf/lang/ translations/ upload/ -f</span>
                 <a href="javascript:void(0);" clip-copy="copyCommand('#cmd3')">
                   <i class="fa fa-copy"></i>
                   Copier
                 </a>
               </li>
-              <li id="cmd4" class="command">
-                php install-dev/index_cli.php --domain=<em>{{username}}</em>.kd.io --database_create=1
+              <li class="command">
+                <span id="cmd4">php install-dev/index_cli.php --domain=<em>{{username}}</em>.kd.io --db_create=1</span>
                 <a href="javascript:void(0);" clip-copy="copyCommand('#cmd4')">
                   <i class="fa fa-copy"></i>
                   Copier
