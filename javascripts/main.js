@@ -10,12 +10,13 @@ pskoding.controller('Main', function($scope,$http) {
     $(element).closest('.command').addClass('animated bounce');
     return cmd;
   };
-  
-  if (!$scope.usernameInput){
-    $scope.username = 'username';
-  } else {
-    $scope.username = $scope.usernameInput;
-  }
+  $scope.$watch('usernameInput', function() {
+    if($scope.usernameInput==null){
+     $scope.username = 'username';
+    } else {
+      $scope.username = $scope.usernameInput;
+    }
+  });
   $scope.checkUrl = function() {
     delete $scope.status;
     var url = "http://"+$scope.username+".kd.io/";
