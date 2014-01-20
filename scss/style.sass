@@ -37,6 +37,10 @@ header
     margin: 30px 0 0 0
     font-weight: 200
     color: $secondary-color
+    .time
+      color: white
+    .level
+      color: white
 
 #header-slider
   padding: 2px
@@ -44,6 +48,9 @@ header
 
 .top-bar
   background-color: $primary-color
+  li.active a
+    background-color: darken($primary-color,8%)!important
+
 .orbit-prev,.orbit-next
   background-color: rgba(black,.6)
 
@@ -115,34 +122,34 @@ header
 .commands-list
   margin: 0
   padding: 0
-.command
-  position: relative
-  text-align: left
-  font-family: Consolas, "Liberation Mono", Courier, monospace
-  font-size: 0.8em
-  line-height: 1.3em
-  color: $primary-color
-  background-color: #1A2224
-  overflow: hidden
-  @include border-radius(7px)
-  text-align: left
-  display: block
-  width: 90%
-  padding: 15px 105px 15px 20px
-  margin: 20px auto 10px
-  @media (max-width: 767px)
-    width: 100%
-    margin: 0 0 10px 0
-    padding: 8px 105px 8px 8px
-  a
-    @extend .button
-    @extend .round
-    @extend .tiny
-    @include absolute(top 5px right 5px)
+  .command
+    position: relative
+    text-align: left
+    font-family: Consolas, "Liberation Mono", Courier, monospace
+    font-size: 0.8em
+    line-height: 1.3em
+    color: $primary-color
+    background-color: #1A2224
+    overflow: hidden
+    @include border-radius(7px)
+    text-align: left
+    display: block
+    width: 90%
+    padding: 15px 105px 15px 20px
+    margin: 20px auto 10px
+    @media (max-width: 767px)
+      width: 100%
+      margin: 0 0 10px 0
+      padding: 8px 105px 8px 8px
+    a
+      @extend .button
+      @extend .radius
+      @include absolute(top 5px right 5px)
+      font-size: 0.7em
 
 .img-thumbnail
   border-radius: 6px
-  border: solid 1px #DDD
+  border: solid 1px #eee
   padding: 6px
 
 .button
@@ -150,6 +157,9 @@ header
   background-color: transparent
   color: $primary-color
   border: 2px solid $primary-color
+  text-transform: uppercase
+  font-size: 0.9em
+  padding: 0.5em 0.9em
   &:hover
     color: $secondary-color
     background-color: transparent
@@ -164,34 +174,50 @@ header
   background: white url(../images/tutorial/Koding_terminal.png) right 0 no-repeat
   background-size: 440px
 
-.grid
-  background-color: #1F2426
-  @include background-image(linear-gradient(rgba(white,.05) 2px, transparent 2px),linear-gradient(90deg, rgba(white,.04) 2px, transparent 2px), linear-gradient(rgba(white,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(white,.03) 1px, transparent 1px),linear-gradient(0deg, rgba(black,.3) 0, transparent 100px))
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
-
 #final-step
   .user-password
     width: 100%
-    margin-top: 10px
+    margin-top: 5px
     text-align: left
+
+#social-step
+  .button
+    position: relative
+    overflow: hidden
+    padding-left: 50px
+    margin-right: 10px
+    i
+      position: absolute
+      top: 0
+      left: 0
+      height: 2.2em
+      font-size: 1.4em
+      color: white
+      line-height: 1.6em
+      width: 40px
+      background-color: $primary-color
+    &:hover i
+      background-color: $secondary-color
 
 #next-steps
   background-color: white
   padding: 20px 0 40px 0
   .hero-octicon
+    @extend .grid
     width: 100px
     height: 100px
     border-radius: 50px
     text-align: center
     margin: 0 auto 15px
     display: block
-    @extend .grid
     background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
     background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
-    &:hover
     i
-      line-height: 2em
+      font-size: 4em
+      line-height: 1.5em
+      color: rgba(white,.5)
+    &:hover i
+      color: white
   h1
     display: block
     font-size: 1.6em
@@ -211,13 +237,18 @@ header
       list-style: none
       list-style-position: inside
 
+.grid
+  background-color: #1A2224
+  @include background-image(linear-gradient(rgba(white,.05) 2px, transparent 2px),linear-gradient(90deg, rgba(white,.04) 2px, transparent 2px), linear-gradient(rgba(white,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(white,.03) 1px, transparent 1px),linear-gradient(0deg, rgba(black,.3) 0, transparent 100px))
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
+
 @media only screen and (min-width: 768px) and (max-width: 959px)
   header
     h1
       font-size: 60px
     h2
       font-size: 30px
-// All Mobile Sizes (devices and browser)
 @media only screen and (max-width: 767px)
   header
     padding: 20px 0
