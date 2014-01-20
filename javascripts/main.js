@@ -7,7 +7,7 @@ pskoding.config(['ngClipProvider', function(ngClipProvider) {
 pskoding.controller('Main', function($scope,$http) {
   $scope.copyCommand = function(element) {
     var cmd = $(element).text();
-    $(element).addClass('animated bounce');
+    $(element).closest('.command').addClass('animated bounce');
     return cmd;
   };
   $scope.username = 'username';
