@@ -11,58 +11,57 @@
     <![endif]-->
     <title>Prestashop-Koding by kGranger</title>
   </head>
-  <body>
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <a href="http://kgranger.fr/"><h1>LEARN PrestaShop [Beta]</a></h1>
-        </li>
-      </ul>
-      <section class="top-bar-section">
-        <ul class="right">
-          <li class="active"><a href="#">FR</a></li>
-          <!-- <li><a href="#">EN</a></li> -->
-        </ul>
-      </section>
-    </nav>
-    <header>
-      <div class="row">
-        <div class="hide-for-small-only medium-6 columns">
-          <div id="header-slider">
-            <ul data-orbit>
-              <li>
-                <img src="images/tutorial/Prestashop_back.png" alt="PrestaShop 1.6">
-              </li>
-              <li>
-                <img src="images/tutorial/Koding_editor.png" alt="Koding.com">
-              </li>
+  <body ng-controller="Tutorial-00">
+<!-- INTRO -->
+    <section id="intro" class="window">
+      <header>
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <a href="http://kgranger.fr/"><h1>LEARN PrestaShop [Beta]</a></h1>
+            </li>
+          </ul>
+          <section class="top-bar-section">
+            <ul class="right">
+              <li class="active"><a href="#">FR</a></li>
+              <!-- <li><a href="#">EN</a></li> -->
             </ul>
+          </section>
+        </nav>
+        <div class="row">
+          <div class="hide-for-small-only medium-6 columns">
+            <div id="header-slider">
+              <ul data-orbit>
+                <li>
+                  <img src="images/tutorial/Prestashop_back.png" alt="PrestaShop 1.6">
+                </li>
+                <li>
+                  <img src="images/tutorial/Koding_editor.png" alt="Koding.com">
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="medium-6 columns">
+            <h1>
+              PrestaShop<br>
+              Koding.com
+            </h1>
+            <h2>Installez, hébergez et jouez avec la version PrestaShop v1.6-alpha</h2>
+            <span class="time-level">
+              <span class="time">Temps </span><i class="fa fa-clock-o"></i><span class="time"> 7 min</span>
+              &nbsp;•&nbsp;
+              <span class="level">Niveau </span><i class="fa fa-coffee"></i><span class="level"> Facile</span>
+            </span>
           </div>
         </div>
-        <div class="medium-6 columns">
-          <h1>
-            PrestaShop<br>
-            Koding.com
-          </h1>
-          <h2>Installez, hébergez et jouez avec la version PrestaShop v1.6-alpha</h2>
-          <span class="time-level">
-            <span class="time">Temps </span><i class="fa fa-clock-o"></i><span class="time"> 7 min</span>
-            &nbsp;•&nbsp;
-            <span class="level">Niveau </span><i class="fa fa-coffee"></i><span class="level"> Facile</span>
-          </span>
-        </div>
-      </div>
-    </header>
-    <section id="intro">
+      </header>
       <div class="row">
-        <div class="edito medium-7 columns">
-          <h3>Apprenez à installer PrestaShop sur une machine virtuelle avec Koding.</h3>
+        <div class="edito medium-6 columns">
           <p>
-            <br/>
             Koding propose un environnement de développement en ligne permettant d'éditer les fichiers et d'accéder à la console. La machine exécute un serveur (apache+php), on peut donc y installer PrestaShop.<br/><br/>
             L'usage de  ce service doit se restreindre au développement et à l'apprentissage, votre machine virtuelle Koding sera inactive au bout de 15 min sans intéraction de votre part.</p>
         </div>
-        <div class="author medium-4 columns show-for-medium-up panel">
+        <div class="author medium-5 columns show-for-medium-up panel">
           <div class="row">
             <div class="large-12 column">
               <h5>A propos de l'auteur</h5>
@@ -70,24 +69,24 @@
             <hr>
             <div class="large-7 column">
               <h3>Kévin Granger</h3>
-              <a class="button tiny" href="http://kgranger.fr/@">Follow on twitter</a>
+              <p>UI-UX Designer @ PrestaShop</p>
             </div>
             <div class="large-5 column show-for-large-up">
-              <a class="th radius">
+              <a href="http:/kgranger.fr/" class="round">
                 <img src="http://www.gravatar.com/avatar/e94df49f046da9bdb0c1006f72d570c2?s=200" alt="Kevin Granger">
               </a>
             </div>
           </div>
           <div class="row">
             <div class="large-12 column">
-            <p>Avec plus de 10 ans d'expérience dans le domaine du web design et de l'ergonomie, Kévin Granger exerce ses talents sur les interfaces du logiciel PrestaShop en tant que designer d'interface et d'experience utilisateur.</p>
+              <p>Designer d'interface et d'experience utilisateur, avec plus de 10 ans d'expérience dans le domaine du web design et de l'ergonomie.<br>Kévin exerce aujourd'hui sa passion sur les interfaces du logiciel PrestaShop.</p>
+              <a class="button" href="http://kgranger.fr/@">Suivre sur Twitter <i class="fa fa-twitter"></i></a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="progress">
-      <div data-magellan-expedition="fixed">
+      <!-- PROGRESS -->
+      <div id="progress" data-magellan-expedition="fixed">
         <div class="progress large-12 round">
           <dl>
             <dd data-magellan-arrival="koding-signup"><a href="#koding-signup">1</a></dd>
@@ -102,232 +101,226 @@
         </div>
       </div>
     </section>
-    <section id="main-content" ng-controller="Main">
-      <div class="row">
-        <ul id="grid" class="tutorial-list">
-          <li id="create-koding-account-step" class="image-right" data-progress="0">
-            <a name="koding-signup"></a>
-            <h3 data-magellan-destination="koding-signup">OK, c'est parti !</h3>
-            <p>Koding fournit <strong>gratuitement</strong> un service puissant pour développer sur un serveur virtuel à partir de votre navigateur.</p>
-            <a href="http://koding.com/Register" target="_blank" class="button">
-              Inscrivez-vous sur Koding
-              <i class="fa fa-arrow-right"></i>
-            </a>
-          </li>
-          <li data-progress="10">
-            <a name="koding-login"></a>
-            <h3 data-magellan-destination="koding-login">Quel est votre nom d'utilisateur Koding ?</h3>
-            <form>
-              <div class="row">
-                <div class="large-3 columns">
-                  <label class="right inline">Identifiant koding.com</label>
-                </div>
-                <div class="large-9 columns">
-                  <input type="text" ng-model="usernameInput" placeholder="username">
-                </div>
-              </div>
-              <!-- <div class="row">
-                <a href="javascript:void(0);" class="button" ng-click="checkUrl()">
-                  Verifier
-                  <i class="fa fa-arrow-right"></i>
-                </a>
-              </div>
-              <div id="koding-account-error" class="row hide">
-                <div data-alert class="alert-box warning radius">
-                  Nous n'avons pas trouvé votre compte sur Koding.com. Si vous êtes certain d'avoir un compte, vérifiez que vous êtes connecté sur Koding.com et réssayez.
-                  <a href="javascript:void(0);" class="close">&times;</a>
-                </div>
-              </div> -->
-            </form>
-          </li>
-          <li id="cloning-prestashop-repo-step" class="image-right" data-progress="30">
-            <a name="koding-terminal"></a>
-            <h3 data-magellan-destination="koding-terminal">Accédez à l’onglet terminal de Koding</h3>
-            <p>L'onglet terminal va vous permettre d'intéragir avec votre machine virtuelle en saisissant des lignes de commandes.</p>
-            <a class="button" href="https://koding.com/Terminal" target="_blank">
-              Accédez au Terminal
-              <i class="fa fa-arrow-right"></i>
-            </a>
-          </li>
-          <li id="install-prestashop-step">
-            <a name="prestashop-install"></a>
-            <h3 data-magellan-destination="prestashop-install">Clonez et installez PrestaShop v1.6 sur votre nouvelle machine virtuelle</h3>
-            <p>Il vous suffit de copier/coller et executer chacune de ces lignes dans le terminal.<br>
-              Note : Sur Windows, le raccourci clavier CTRL+V ne fonctionne pas à partir du terminal : utilisez le menu du clic droit.</p>
-            <ul class="commands-list">
-              <li class="command">
-                <span id="cmd1">git clone https://github.com/PrestaShop/PrestaShop.git -b 1.6 Web/PS16</span>
-                <a href="javascript:void(0);" clip-copy="copyCommand('#cmd1')">
-                  <i class="fa fa-copy"></i>
-                  Copier
-                </a>
-              </li>
-              <li class="command">
-                <span id="cmd2">cd Web/PS16</span>
-                <a href="javascript:void(0);" clip-copy="copyCommand('#cmd2')">
-                  <i class="fa fa-copy"></i>
-                  Copier
-                </a>
-              </li>
-              <li class="command">
-                <span id="cmd3">chmod -R 777 cache/ config/ download/ img/ log/ mails/ modules/ themes/*/lang themes/*/cache themes/*/pdf/lang/ translations/ upload/ -f</span>
-                <a href="javascript:void(0);" clip-copy="copyCommand('#cmd3')">
-                  <i class="fa fa-copy"></i>
-                  Copier
-                </a>
-              </li>
-              <li class="command">
-                <span id="cmd4">php install-dev/index_cli.php --domain=<em>{{username}}</em>.kd.io --db_create=1</span>
-                <a href="javascript:void(0);" clip-copy="copyCommand('#cmd4')">
-                  <i class="fa fa-copy"></i>
-                  Copier
-                </a>
-              </li>
-            </ul>
-          </li>
-          <!-- <li>
-            <h3>Installation de <a href="http://www.prestashop.com/">PrestaShop</a></h3>
-            <p>Accèdez à l’url d’installation de votre boutique :<br><br>http://<em>username</em>.kd.io/PS16/install-dev/</p>
-            <img class="img-thumbnail" src="images/tutorial/Prestashop_install.png" alt="">
-            <br><br>
-            <p>...et suivez le processus d’installation de votre nouvelle boutique.<br>PrestaShop est capable de créer sa table de données tout seul.</p>
-            <br>
-            <img class="img-thumbnail" src="images/tutorial/Prestashop_install.gif" alt="">
-          </li> -->
-          <li id="final-step" class="final-step" data-progress="100">
-            <a name="final"></a>
-            <h3 data-magellan-destination="final">Félicitations !</h3>
-            <p>Votre boutique de développement est prête.</p>
-            <hr>
-            <div class="back-front row">
-              <div class="large-6 column">
-                <h4>Front Office PrestaShop</h4>  
-                <a class="button" href="http://{{username}}.kd.io/PS16/">
-                  <i class="fa fa-link"></i>
-                  http://<em>{{username}}</em>.kd.io/PS16/
-                </a>
-                <a href="http://{{username}}.kd.io/PS16/">
-                  <img class="img-thumbnail" src="images/tutorial/Prestashop_front.png" alt="PrestaShop 1.6 Front Office">
-                </a>
-              </div>
-              <div class="large-6 column">
-                <h4>Back Office PrestaShop</h4>
-                <a class="button" href="http://{{username}}.kd.io/PS16/admin-dev/">
-                  <i class="fa fa-link"></i>
-                  http://<em>{{username}}</em>.kd.io/PS16/admin-dev/
-                </a>
-                <table class="user-password">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <i class="fa fa-envelope"></i>
-                        Utilisateur
-                      </td>
-                      <td>
-                        <i class="fa fa-key"></i>
-                        Mot de passe
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><strong>test@prestashop.com</strong></td>
-                      <td><strong>0123456789</strong></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <a href="http://{{username}}.kd.io/PS16/admin-dev/">
-                  <img class="img-thumbnail" src="images/tutorial/Prestashop_login.png" alt="Prestashop 1.6 Back Office">
-                </a>
-              </div>
+<!-- STEP : START  -->
+    <section id="create-koding-account-step" class="window tutorial-list" data-progress="0">
+      <a name="koding-signup"></a>
+      <div class="step image-right">
+        <h3 data-magellan-destination="koding-signup">OK, c'est parti !</h3>
+        <p>Koding fournit <strong>gratuitement</strong> un service puissant pour développer sur un serveur virtuel à partir de votre navigateur.</p>
+        <a href="http://koding.com/Register" target="_blank" class="button">
+          Inscrivez-vous sur Koding
+          <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+<!-- STEP : LOGIN -->
+    <section id="koding-username-step" class="window tutorial-list" data-progress="15">
+      <a name="koding-login"></a>
+      <div class="step">
+        <h3 data-magellan-destination="koding-login">Quel est votre nom d'utilisateur Koding ?</h3>
+        <form>
+          <div class="row">
+            <div class="large-3 columns">
+              <label class="right inline">Identifiant koding.com</label>
             </div>
-          </li>
-          <li id="comments" class="comment-step">
-            <h3>Commentaires et questions ?</h3>
-            <div class="comments-wrapper">
-              <div id="disqus_thread"></div>  
+            <div class="large-9 columns">
+              <input type="text" ng-model="usernameInput" placeholder="username">
             </div>
+          </div>
+          <!-- <div class="row">
+            <button type="submit" href="javascript:void(0);" class="button" ng-click="checkUrl()">
+              Verifier
+              <i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+          <div id="koding-account-error" class="row hide">
+            <div data-alert class="alert-box warning radius">
+              Nous n'avons pas trouvé votre compte sur Koding.com. Si vous êtes certain d'avoir un compte, vérifiez que vous êtes connecté sur Koding.com et réssayez.
+              <a href="javascript:void(0);" class="close">&times;</a>
+            </div>
+          </div> -->
+        </form>
+      </div>
+    </section>
+<!-- STEP : CLONING -->
+    <section id="cloning-prestashop-step" class="window tutorial-list" data-progress="30">
+      <a name="koding-terminal"></a>
+      <div class="step image-right">
+        <h3 data-magellan-destination="koding-terminal">Accédez à l’onglet terminal de Koding</h3>
+        <p>L'onglet terminal va vous permettre d'intéragir avec votre machine virtuelle en saisissant des lignes de commandes.</p>
+        <a class="button" href="https://koding.com/Terminal" target="_blank">
+          Accédez au Terminal
+          <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+<!-- STEP : INSTALL -->
+    <section id="install-prestashop-step" class="window tutorial-list" data-progress="45" >
+      <a name="prestashop-install"></a>
+      <div class="step">
+        <h3 data-magellan-destination="prestashop-install">Clonez et installez PrestaShop v1.6 sur votre nouvelle machine virtuelle</h3>
+        <p>Il vous suffit de copier/coller et executer chacune de ces lignes dans le terminal.<br>
+          Note : Sur Windows, le raccourci clavier CTRL+V ne fonctionne pas à partir du terminal : utilisez le menu du clic droit.</p>
+        <ul class="commands-list">
+          <li class="command">
+            <span id="cmd1">git clone https://github.com/PrestaShop/PrestaShop.git -b 1.6 Web/PS16</span>
+            <a href="javascript:void(0);" clip-copy="copyCommand('#cmd1')">
+              <i class="fa fa-copy"></i>
+              Copier
+            </a>
           </li>
-          <li id="social-step" class="social-step">
-            <h3>Pour partager...</h3>
-            <a class="button" target="_blank" href="https://twitter.com/intent/tweet?text=YOUR-TITLE&url=YOUR-URL&via=TWITTER-HANDLE">
-              <i class="fa fa-twitter"></i>
-              Twitter
+          <li class="command">
+            <span id="cmd2">cd Web/PS16</span>
+            <a href="javascript:void(0);" clip-copy="copyCommand('#cmd2')">
+              <i class="fa fa-copy"></i>
+              Copier
             </a>
-            <a class="button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=YOUR-URL">
-              <i class="fa fa-facebook"></i>
-              Facebook
+          </li>
+          <li class="command">
+            <span id="cmd3">chmod -R 777 cache/ config/ download/ img/ log/ mails/ modules/ themes/*/lang themes/*/cache themes/*/pdf/lang/ translations/ upload/ -f</span>
+            <a href="javascript:void(0);" clip-copy="copyCommand('#cmd3')">
+              <i class="fa fa-copy"></i>
+              Copier
             </a>
-            <a class="button" target="_blank" href="https://plus.google.com/share?url=YOUR-URL">
-              <i class="fa fa-google-plus"></i>
-              Google+
+          </li>
+          <li class="command">
+            <span id="cmd4">php install-dev/index_cli.php --domain=<em>{{username}}</em>.kd.io --db_create=1</span>
+            <a href="javascript:void(0);" clip-copy="copyCommand('#cmd4')">
+              <i class="fa fa-copy"></i>
+              Copier
             </a>
-            <a class="button" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=YOUR-URL&title=YOUR-TITLE&summary=YOUR-SUMMARY&source=YOUR-URL">
-              <i class="fa fa-linkedin"></i>
-              LinkedIn
-            </a>
-            <a class="button" target="_blank" href="https://pinterest.com/pin/create/button/?url=YOUR-URL&description=YOUR-DESCRIPTION&media=YOUR-IMAGE-SRC">
-              <i class="fa fa-pinterest"></i>
-              Pinterest
-            </a>
-
-            <!-- <h3>...et rester informé</h3>
-              <div class="row">
-                <div class="large-6 column">
-                  <input type="text" name="newsletter" id="newsletter" placeholder="address@domain.com">
-                </div>
-                <div class="large-6 column">
-                  <a class="button postfix">
-                    <i class="fa fa-envelope-o"></i>
-                    S'inscrire
-                  </a>
-                </div>
-              </div>
-            </div> -->
           </li>
         </ul>
       </div>
     </section>
-    <section id="next-steps">
-      <h1>
-        ...et quelques ressources PrestaShop qui pourraient bien vous intéresser
-      </h1>
-      <div class="next-steps row">
-        <div class="medium-4 columns">
-          <a class="hero-octicon" href="javascript:void(0);">
-            <i class="fa fa-lightbulb-o fa-3x"></i>
-          </a>
-          <h2>Contribuer</h2>
-          <ul>
-            <li><a href="#">Club Utilisateur</a></li>  
-            <li><a href="#">Bug tracker</a></li>
-          </ul>
-        </div>
-        <div class="medium-4 columns">
-          <a class="hero-octicon" href="javascript:void(0);">
-            <i class="fa fa-book fa-3x"></i>
-          </a>
-          <h2>Apprendre</h2>
-          <ul>
-            <li><a href="#">Doc en ligne</a></li>
-            <li><a href="#">Développer un widget Dashboard</a></li>
-          </ul>
-        </div>
-        <div class="medium-4 columns">
-          <a class="hero-octicon" href="javascript:void(0);">
-            <i class="fa fa-comments-o fa-3x"></i>
-          </a>
-          <h2>Rejoindre la communauté</h2>
-          <ul>
-            <li><a href="#">Forum PrestaShop</a></li>
-            <li><a href="#">Twitter PrestaShop</a></li>
-          </ul>
+<!-- STEP : FINAL -->
+    <section id="final-step" class="window tutorial-list" data-progress="60">
+      <a name="final"></a>
+      <div class="step final-step">
+        <h3 data-magellan-destination="final">Félicitations !</h3>
+        <p>Votre boutique de développement est prête.</p>
+        <hr>
+        <div class="back-front row">
+          <div class="large-6 column">
+            <h4>Front Office PrestaShop</h4>  
+            <a class="button" href="http://{{username}}.kd.io/PS16/">
+              <i class="fa fa-link"></i>
+              http://<em>{{username}}</em>.kd.io/PS16/
+            </a>
+            <a href="http://{{username}}.kd.io/PS16/">
+              <img class="img-thumbnail" src="images/tutorial/Prestashop_front.png" alt="PrestaShop 1.6 Front Office">
+            </a>
+          </div>
+          <div class="large-6 column">
+            <h4>Back Office PrestaShop</h4>
+            <a class="button" href="http://{{username}}.kd.io/PS16/admin-dev/">
+              <i class="fa fa-link"></i>
+              http://<em>{{username}}</em>.kd.io/PS16/admin-dev/
+            </a>
+            <table class="user-password">
+              <tbody>
+                <tr>
+                  <td>
+                    <i class="fa fa-envelope"></i>
+                    Utilisateur
+                  </td>
+                  <td>
+                    <i class="fa fa-key"></i>
+                    Mot de passe
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>test@prestashop.com</strong></td>
+                  <td><strong>0123456789</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="http://{{username}}.kd.io/PS16/admin-dev/">
+              <img class="img-thumbnail" src="images/tutorial/Prestashop_login.png" alt="Prestashop 1.6 Back Office">
+            </a>
+          </div>
         </div>
       </div>
+    </section>
+<!-- STEP : COMMENTS -->
+    <section id="comments" class="window tutorial-list" data-progress="75">
+      <div class="step comment-step">
+        <h3>Commentaires // Questions ?</h3>
+        <div class="comments-wrapper">
+          <div id="disqus_thread"></div>  
+        </div>
+      </div>
+    </section>
+<!-- STEP : SOCIAL -->
+    <section id="social-step" class="window tutorial-list" data-progress="100">
+      <div class="step social-step ">
+        <h3>Pour partager...</h3>
+        <a class="button" target="_blank" href="https://twitter.com/intent/tweet?text=YOUR-TITLE&url=YOUR-URL&via=TWITTER-HANDLE">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+        <a class="button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=YOUR-URL">
+          <i class="fa fa-facebook"></i>
+          Facebook
+        </a>
+        <a class="button" target="_blank" href="https://plus.google.com/share?url=YOUR-URL">
+          <i class="fa fa-google-plus"></i>
+          Google+
+        </a>
+        <a class="button" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=YOUR-URL&title=YOUR-TITLE&summary=YOUR-SUMMARY&source=YOUR-URL">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+        <a class="button" target="_blank" href="https://pinterest.com/pin/create/button/?url=YOUR-URL&description=YOUR-DESCRIPTION&media=YOUR-IMAGE-SRC">
+          <i class="fa fa-pinterest"></i>
+          Pinterest
+        </a>
+      </div>
+    </section>
+<!-- NEXT STEPS -->
+    <section id="next-steps" class="window">
+      <footer>
+        <h1>...et quelques ressources PrestaShop qui pourraient bien vous intéresser</h1>
+        <div class="next-steps row">
+          <div class="medium-4 columns">
+            <a class="hero-octicon" href="javascript:void(0);">
+              <i class="fa fa-lightbulb-o fa-3x"></i>
+            </a>
+            <h2>Contribuer</h2>
+            <ul>
+              <li><a href="#">Club Utilisateur</a></li>  
+              <li><a href="#">Bug tracker</a></li>
+            </ul>
+          </div>
+          <div class="medium-4 columns">
+            <a class="hero-octicon" href="javascript:void(0);">
+              <i class="fa fa-book fa-3x"></i>
+            </a>
+            <h2>Apprendre</h2>
+            <ul>
+              <li><a href="#">Doc en ligne</a></li>
+              <li><a href="#">Développer un widget Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="medium-4 columns">
+            <a class="hero-octicon" href="javascript:void(0);">
+              <i class="fa fa-comments-o fa-3x"></i>
+            </a>
+            <h2>Rejoindre la communauté</h2>
+            <ul>
+              <li><a href="#">Forum PrestaShop</a></li>
+              <li><a href="#">Twitter PrestaShop</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </section>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="javascripts/vendor/waypoints.js"></script>
     <script src="javascripts/vendor/angular/angular.min.js"></script>
     <script src="javascripts/vendor/zeroclipboard/ZeroClipboard.min.js"></script>
     <script src="javascripts/vendor/ngClip.js"></script>
+    <script src="javascripts/vendor/jquery.windows.js"></script>
     <script src="javascripts/vendor/foundation/foundation.js"></script>
     <script src="javascripts/vendor/foundation/foundation.orbit.js"></script>
     <script src="javascripts/vendor/foundation/foundation.magellan.js"></script>

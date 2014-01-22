@@ -4,7 +4,7 @@ pskoding.config(['ngClipProvider', function(ngClipProvider) {
   ngClipProvider.setPath("javascripts/vendor/zeroclipboard/ZeroClipboard.swf");
 }]);
 
-pskoding.controller('Main', function($scope,$http) {
+pskoding.controller('Tutorial-00', function($scope,$http) {
   $scope.copyCommand = function(element) {
     var cmd = $(element).text();
     $(element).closest('.command').addClass('animated bounce');
@@ -45,20 +45,38 @@ $(document).foundation({
     }
   });
 
-var progress = 0;
-//var steps = $('#grid > li').length;
-$('#grid > li').waypoint(
-  function() {
-    $(this).css('visibility', 'visible').addClass('animated fadeInUp');
-    progress = $(this).data('progress');
-    $('#progress .meter').css('width',progress + '%');
-  },
-  {offset: '77%'}
-);
 
-var disqus_shortname = 'kgranger';
-(function() {
-  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+$('.window').windows({
+    snapping: true,
+    snapSpeed: 500,
+    snapInterval: 1100,
+    onScroll: function(scrollPos){
+        // scrollPos:Number
+    },
+    onSnapComplete: function($el){
+        // after window ($el) snaps into place
+    },
+    onWindowEnter: function($el){
+        // when new window ($el) enters viewport
+    }
+})
+
+$(document).ready(function(){
+  var progress = 0;
+  //var steps = $('#grid > li').length;
+  $('.window').waypoint(
+    function() {
+      $(this).find('.step').css('visibility', 'visible').addClass('animated fadeInUp');
+      progress = $(this).data('progress');
+      $('#progress .meter').css('width',progress + '%');
+    },
+    {offset: '50%'}
+  );
+
+  var disqus_shortname = 'kgranger';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+});

@@ -8,6 +8,22 @@ $reveal-position-top: 20px
 @import "partials/font-awesome"
 @import "modules/mixins"
 
+//Debug responsive
+// *
+//   @media #{$small-only}
+//     outline: 10px solid green
+//   @media #{$medium-only}
+//     outline: 10px solid red
+//   @media #{$large-only}
+//     outline: 10px solid yellow
+//   @media #{$xlarge-only}
+//     outline: 10px solid blue
+
+html, body
+  height: 100%
+  margin: 0
+  padding: 0
+
 body
   color: #666
   background-color: #eee
@@ -15,19 +31,27 @@ body
 header
   @extend .grid
   margin: 0 auto
-  padding: 40px 0 20px
+  padding: 0 0 20px
   color: #fff
   +text-shadow(rgba(0, 0, 0, 0.3) 1px 1px 0)
+  .top-bar
+    margin-bottom: 20px
+    background-color: $primary-color
+    li.active a
+      background-color: darken($primary-color,8%)!important
   h1
     float: left
     position: relative
     letter-spacing: -1px
-    font-size: 4em
     text-transform: uppercase
     color: #fff
     line-height: 1
     margin: 0 0 0.5em 0
     z-index: 10
+    @media #{$medium-up}
+      font-size: 4em
+    @media #{$small-only}
+      font-size: 2em
     &:after
       content: "&"
       +text-shadow(none)
@@ -38,11 +62,16 @@ header
       right: -80px
       z-index: -1
   h2
+    clear: both
     font-size: 28px
     letter-spacing: 0.07em
     color: $primary-color
     font-weight: 200
     line-height: 1.3
+    @media #{$medium-up}
+      font-size: 1.6em
+    @media #{$small-only}
+      font-size: 1.3em
   .time-level
     display: inline-block
     font-size: 1.3em
@@ -54,47 +83,42 @@ header
     .level
       color: white
 
+.orbit-prev,.orbit-next
+  background-color: rgba(black,.6)
+
 #header-slider
   padding: 2px
   background-color: black
 
 #intro
-  padding-top: 20px
+  padding-top: 0 20px 0
   background-color: white
   border-bottom: solid 1px #DDDDDD
   .edito
   .author
-    background-color: #F6F6F6
     border: none
-    .th
+    margin: 10px 0
+    padding: 10px 20px
+    .round
+      display: block
       position: relative
       top: -50px
+      margin-bottom: -40px
+      overflow: hidden
+      +border-radius(100px)
     h3
       font-size: 1.6em
     p
       color: #777
       font-size: 0.85em
+    .button
+      background-color: white
+      width: 100%
 #progress
   background-color: white
   border-bottom: solid 1px #DDDDDD
   height: 52px
   padding-top: 4px
-  dl
-    position: absolute
-    top: -10px
-    left: 0
-    display: block
-    width: 100%
-    z-index: 20
-    dd
-      width: 14.5%
-      display: inline-block
-      &:last-child
-        width: 0
-        a
-          position: absolute
-          right: 0px
-          top: 0
   a
     font-size: 16px
     line-height: 36px
@@ -115,24 +139,43 @@ header
     margin: 0 auto
     .meter
       background-color: #323E41
-
-.top-bar
-  background-color: $primary-color
-  li.active a
-    background-color: darken($primary-color,8%)!important
-
-.orbit-prev,.orbit-next
-  background-color: rgba(black,.6)
+      +transition-property(width)
+      +transition-duration(0.4s)
+      +transition-timing-function(ease-in)
+  dl
+    position: absolute
+    top: -8px
+    left: 0
+    display: inline-block
+    width: 100%
+    z-index: 20
+    margin: 0
+    padding: 0
+    dd
+      margin: 0
+      padding: 0
+      width: 15%
+      display: inline-block
+      position: relative
+      a
+        position: absolute
+        left: -22px
+        top: -5px
+      &:last-child
+        position: absolute
+        right: 0
+        top: -5px
+        width: 0
 
 .tutorial-list
-  margin: 90px 0 0 0
   counter-reset: tutorialstep
-  > li
+  .step
     visibility: hidden
-    list-style: none
     position: relative
+    top: 20%
+    width: 960px
+    margin: 0 auto
     background-color: #fff
-    margin: 0 0 70px 0px
     padding: 20px 20px 10px
     font-size: 18px
     border: 1px solid #ddd
@@ -155,7 +198,7 @@ header
       text-align: center
       -webkit-backface-visibility: hidden
       z-index: 100
-      @media (max-width: 767px)
+      @media #{$medium-only}
         width: 42px
         height: 42px
         line-height: 42px
@@ -182,13 +225,12 @@ header
     margin: 0 0 0.8em 0
   .image-right
     padding-right: 460px
-    @media (max-width: 767px)
+    @media #{$medium-only}
       padding-right: 10px
       background-image: none!important
     p
       margin-left: 30px
       margin-right: 30px
-
 .commands-list
   margin: 0
   padding: 0
@@ -207,7 +249,7 @@ header
     width: 90%
     padding: 15px 105px 15px 20px
     margin: 20px auto 10px
-    @media (max-width: 767px)
+    @media #{$medium-only}
       width: 100%
       margin: 0 0 10px 0
       padding: 8px 105px 8px 8px
@@ -236,11 +278,11 @@ header
     border-color: $secondary-color
 
 //STEPS
-#create-koding-account-step
+#create-koding-account-step .step
   background: white url(../images/tutorial/Koding_homepage.png) right 0 no-repeat
   background-size: 440px
 
-#cloning-prestashop-repo-step
+#cloning-prestashop-step .step
   background: white url(../images/tutorial/Koding_terminal.png) right 0 no-repeat
   background-size: 440px
 
@@ -313,24 +355,21 @@ header
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px, center bottom
 
-@media only screen and (min-width: 768px) and (max-width: 959px)
-  header
-    h1
-      font-size: 60px
-    h2
-      font-size: 30px
-@media only screen and (max-width: 767px)
-  header
-    padding: 20px 0
-    h2
-      width: 100%
-    h1
-      font-size: 32px
-    h2
-      font-size: 16px
-    .time-level
-      font-size: 13px
-  #main-content
-    float: none
-    width: 100% !important
-    padding: 0 30px
+.window
+  width: 100%
+  height: 100%
+  position: absolute
+
+$light-gray: #D5D7DD
+$teal: #1babb7
+$light-green: #6ab29f
+$dark-gray: #333a3e
+$red: #d0482b
+$off-black: #231f20
+
+$colors: $light-gray, $teal, $light-green, $dark-gray, $red, $off-black, red, blue, green, yellow
+
+@for $i from 1 through 10
+  .window:nth-child(#{$i})
+    background: nth($colors, $i)
+    top: ($i - 1) * 100%
