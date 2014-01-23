@@ -116,9 +116,9 @@ header
       width: 100%
 #progress
   background-color: white
-  border-bottom: solid 1px #DDDDDD
-  height: 52px
-  padding-top: 4px
+  position: relative
+  padding: 15px 0
+  margin-bottom: 50px
   a
     font-size: 16px
     line-height: 36px
@@ -137,6 +137,7 @@ header
     position: relative
     width: 90%
     margin: 0 auto
+    background-color: #EEEEEE
     .meter
       background-color: #323E41
       +transition-property(width)
@@ -144,27 +145,24 @@ header
       +transition-timing-function(ease-in)
   dl
     position: absolute
-    top: -8px
-    left: 0
-    display: inline-block
+    display: block
+    top: -9px
     width: 100%
     z-index: 20
-    margin: 0
     padding: 0
     dd
-      margin: 0
       padding: 0
-      width: 15%
-      display: inline-block
+      width: 16.666%
+      float: left
       position: relative
       a
         position: absolute
         left: -22px
-        top: -5px
+        top: 0
       &:last-child
         position: absolute
         right: 0
-        top: -5px
+        top: 0
         width: 0
 
 .tutorial-list
@@ -367,7 +365,7 @@ $dark-gray: #333a3e
 $red: #d0482b
 $off-black: #231f20
 
-$colors: $light-gray, $teal, $light-green, $dark-gray, $red, $off-black, red, blue, green, yellow
+$colors: white, #1D2124, #3498db, #9b59b6, #e67e22, #f39c12, #16a085, #9b59b6, #34495e, #e74c3c
 
 @for $i from 1 through 10
   .window:nth-child(#{$i})

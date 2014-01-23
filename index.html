@@ -18,7 +18,7 @@
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <a href="http://kgranger.fr/"><h1>LEARN PrestaShop [Beta]</a></h1>
+              <a class="logo" href="http://kgranger.fr/">LEArN PrestaShop [Beta]</a>
             </li>
           </ul>
           <section class="top-bar-section">
@@ -55,11 +55,28 @@
           </div>
         </div>
       </header>
+      <!-- PROGRESS -->
+      <div id="progress" data-magellan-expedition="fixed">
+        <div class="progress large-12 round">
+          <dl>
+            <dd data-magellan-arrival="create-koding-account-step"><a href="#create-koding-account-step">1</a></dd>
+            <dd data-magellan-arrival="koding-username-step"><a href="#koding-username-step">2</a></dd>
+            <dd data-magellan-arrival="cloning-prestashop-step"><a href="#cloning-prestashop-step">3</a></dd>
+            <dd data-magellan-arrival="install-prestashop-step"><a href="#install-prestashop-step">4</a></dd>
+            <dd data-magellan-arrival="final-step"><a href="#final-step">5</a></dd>
+            <dd data-magellan-arrival="social-step"><a href="#social-step">7</a></dd>
+            <dd data-magellan-arrival="comments-step"><a href="#comments-step">6</a></dd>
+          </dl>
+          <span class="meter" data-progress="0" style="width:0"></span>
+        </div>
+      </div>
+      <!-- EDITO -->
       <div class="row">
         <div class="edito medium-6 columns">
-          <p>
-            Koding propose un environnement de développement en ligne permettant d'éditer les fichiers et d'accéder à la console. La machine exécute un serveur (apache+php), on peut donc y installer PrestaShop.<br/><br/>
+          <h3>Qu'est-ce que Koding ?</h3>
+          <p>Koding propose un environnement de développement en ligne permettant d'éditer les fichiers et d'accéder à la console. La machine exécute un serveur (apache+php), on peut donc y installer PrestaShop.<br/><br/>
             L'usage de  ce service doit se restreindre au développement et à l'apprentissage, votre machine virtuelle Koding sera inactive au bout de 15 min sans intéraction de votre part.</p>
+            <p class="text-center"><a class="button" href="#create-koding-account-step">J'ai tout compris, c'est parti !</a></p>
         </div>
         <div class="author medium-5 columns show-for-medium-up panel">
           <div class="row">
@@ -80,30 +97,15 @@
           <div class="row">
             <div class="large-12 column">
               <p>Designer d'interface et d'experience utilisateur, avec plus de 10 ans d'expérience dans le domaine du web design et de l'ergonomie.<br>Kévin exerce aujourd'hui sa passion sur les interfaces du logiciel PrestaShop.</p>
-              <a class="button" href="http://kgranger.fr/@">Suivre sur Twitter <i class="fa fa-twitter"></i></a>
+              <a href="https://twitter.com/Kevin_Granger" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @Kevin_Granger</a>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- PROGRESS -->
-      <div id="progress" data-magellan-expedition="fixed">
-        <div class="progress large-12 round">
-          <dl>
-            <dd data-magellan-arrival="koding-signup"><a href="#koding-signup">1</a></dd>
-            <dd data-magellan-arrival="koding-login"><a href="#koding-login">2</a></dd>
-            <dd data-magellan-arrival="koding-terminal"><a href="#koding-terminal">3</a></dd>
-            <dd data-magellan-arrival="prestashop-install"><a href="#prestashop-install">4</a></dd>
-            <dd data-magellan-arrival="final"><a href="#final">5</a></dd>
-            <dd data-magellan-arrival="final"><a href="#final">6</a></dd>
-            <dd data-magellan-arrival="final"><a href="#final">7</a></dd>
-          </dl>
-          <span class="meter" data-progress="0" style="width:0"></span>
         </div>
       </div>
     </section>
 <!-- STEP : START  -->
     <section id="create-koding-account-step" class="window tutorial-list" data-progress="0">
-      <a name="koding-signup"></a>
+      <a name="create-koding-account-step"></a>
       <div class="step image-right">
         <h3 data-magellan-destination="koding-signup">OK, c'est parti !</h3>
         <p>Koding fournit <strong>gratuitement</strong> un service puissant pour développer sur un serveur virtuel à partir de votre navigateur.</p>
@@ -114,8 +116,8 @@
       </div>
     </section>
 <!-- STEP : LOGIN -->
-    <section id="koding-username-step" class="window tutorial-list" data-progress="15">
-      <a name="koding-login"></a>
+    <section id="koding-username-step" class="window tutorial-list" data-progress="0">
+      <a name="koding-username-step"></a>
       <div class="step">
         <h3 data-magellan-destination="koding-login">Quel est votre nom d'utilisateur Koding ?</h3>
         <form>
@@ -143,8 +145,8 @@
       </div>
     </section>
 <!-- STEP : CLONING -->
-    <section id="cloning-prestashop-step" class="window tutorial-list" data-progress="30">
-      <a name="koding-terminal"></a>
+    <section id="cloning-prestashop-step" class="window tutorial-list" data-progress="16.6">
+      <a name="cloning-prestashop-step"></a>
       <div class="step image-right">
         <h3 data-magellan-destination="koding-terminal">Accédez à l’onglet terminal de Koding</h3>
         <p>L'onglet terminal va vous permettre d'intéragir avec votre machine virtuelle en saisissant des lignes de commandes.</p>
@@ -155,8 +157,8 @@
       </div>
     </section>
 <!-- STEP : INSTALL -->
-    <section id="install-prestashop-step" class="window tutorial-list" data-progress="45" >
-      <a name="prestashop-install"></a>
+    <section id="install-prestashop-step" class="window tutorial-list" data-progress="33.2">
+      <a name="install-prestashop-step"></a>
       <div class="step">
         <h3 data-magellan-destination="prestashop-install">Clonez et installez PrestaShop v1.6 sur votre nouvelle machine virtuelle</h3>
         <p>Il vous suffit de copier/coller et executer chacune de ces lignes dans le terminal.<br>
@@ -194,8 +196,8 @@
       </div>
     </section>
 <!-- STEP : FINAL -->
-    <section id="final-step" class="window tutorial-list" data-progress="60">
-      <a name="final"></a>
+    <section id="final-step" class="window tutorial-list" data-progress="49.8">
+      <a name="final-step"></a>
       <div class="step final-step">
         <h3 data-magellan-destination="final">Félicitations !</h3>
         <p>Votre boutique de développement est prête.</p>
@@ -242,17 +244,9 @@
         </div>
       </div>
     </section>
-<!-- STEP : COMMENTS -->
-    <section id="comments" class="window tutorial-list" data-progress="75">
-      <div class="step comment-step">
-        <h3>Commentaires // Questions ?</h3>
-        <div class="comments-wrapper">
-          <div id="disqus_thread"></div>  
-        </div>
-      </div>
-    </section>
 <!-- STEP : SOCIAL -->
-    <section id="social-step" class="window tutorial-list" data-progress="100">
+    <section id="social-step" class="window tutorial-list" data-progress="67">
+      <a name="social-step"></a>
       <div class="step social-step ">
         <h3>Pour partager...</h3>
         <a class="button" target="_blank" href="https://twitter.com/intent/tweet?text=YOUR-TITLE&url=YOUR-URL&via=TWITTER-HANDLE">
@@ -275,10 +269,37 @@
           <i class="fa fa-pinterest"></i>
           Pinterest
         </a>
+        <hr>
+        <h3>Restez informé de la parution des prochains LEArN PrestaShop ?</h3>
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="http://capasite.us1.list-manage.com/subscribe/post?u=81efb8e9ebc8d949bf4188bf6&amp;id=5ab3aac1c4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+            </div>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_81efb8e9ebc8d949bf4188bf6_5ab3aac1c4" value=""></div>
+            <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">Ajouter mon Email</button>
+          </form>
+        </div>
+        <!--End mc_embed_signup-->
+      </div>
+    </section>
+<!-- STEP : COMMENTS -->
+    <section id="comments-step" class="window tutorial-list" data-progress="84">
+      <a name="comments-step"></a>
+      <div class="step comment-step">
+        <h3>Commentaires // Questions ?</h3>
+        <div class="comments-wrapper">
+          <div id="disqus_thread"></div>  
+        </div>
       </div>
     </section>
 <!-- NEXT STEPS -->
-    <section id="next-steps" class="window">
+    <section id="next-steps" class="window"data-progress="100">
       <footer>
         <h1>...et quelques ressources PrestaShop qui pourraient bien vous intéresser</h1>
         <div class="next-steps row">

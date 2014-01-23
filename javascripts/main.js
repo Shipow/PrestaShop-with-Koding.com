@@ -33,35 +33,39 @@ pskoding.controller('Tutorial-00', function($scope,$http) {
   };
 });
 
-$(document).foundation({
-  orbit: {
-      animation: 'fade',
-      timer_speed: 1000,
-      animation_speed: 500,
-      navigation_arrows: true,
-      slide_number: false,
-      bullets: false,
-      timer: false,
-    }
-  });
 
-
-$('.window').windows({
-    snapping: true,
-    snapSpeed: 500,
-    snapInterval: 1100,
-    onScroll: function(scrollPos){
-        // scrollPos:Number
-    },
-    onSnapComplete: function($el){
-        // after window ($el) snaps into place
-    },
-    onWindowEnter: function($el){
-        // when new window ($el) enters viewport
-    }
-})
 
 $(document).ready(function(){
+
+  $(document).foundation({
+    orbit: {
+        animation: 'fade',
+        timer_speed: 1000,
+        animation_speed: 500,
+        navigation_arrows: true,
+        slide_number: false,
+        bullets: false,
+        timer: false,
+      }
+    });
+
+
+  $('.window').windows({
+      snapping: true,
+      snapSpeed: 500,
+      snapInterval: 1100,
+      onScroll: function(scrollPos){
+          // scrollPos:Number
+      },
+      onSnapComplete: function($el){
+          // after window ($el) snaps into place
+      },
+      onWindowEnter: function($el){
+        console.log('test');
+          // when new window ($el) enters viewport
+      }
+  })
+
   var progress = 0;
   //var steps = $('#grid > li').length;
   $('.window').waypoint(
@@ -72,6 +76,9 @@ $(document).ready(function(){
     },
     {offset: '50%'}
   );
+
+  //twitter
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
   var disqus_shortname = 'kgranger';
   (function() {
